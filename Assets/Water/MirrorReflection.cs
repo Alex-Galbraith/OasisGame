@@ -71,7 +71,8 @@ public class MirrorReflection : MonoBehaviour {
         Vector4 clipPlane = CameraSpacePlane(reflectionCamera, pos, normal, 1.0f);
         Matrix4x4 m = cam.projectionMatrix;
         if (ignoreJitter)
-            cam.projectionMatrix = cam.GetProjectionMatrix(0, 0);
+            cam.projectionMatrix = cam.nonJitteredProjectionMatrix;
+  
         //Matrix4x4 projection = cam.projectionMatrix;
         Matrix4x4 projection = cam.CalculateObliqueMatrix(clipPlane);
         reflectionCamera.projectionMatrix = projection;
