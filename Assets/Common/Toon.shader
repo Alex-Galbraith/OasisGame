@@ -7,6 +7,7 @@ Shader "Custom/Toon"
 		_Color("Color", Color) = (1,1,1,1)
 		_MainTex("Main Texture", 2D) = "white" {}
 		_DitherTex("Dither Texture", 2D) = "white" {}
+		_DitherRadius("Dither Radius", Float) = 1
 		// Ambient light is applied uniformly to all surfaces on the object.
 		[HDR]
 		_AmbientColor("Ambient Color", Color) = (0.4,0.4,0.4,1)
@@ -80,15 +81,18 @@ Shader "Custom/Toon"
 
 			float4 _RimColor;
 			float _RimAmount;
-			float _RimThreshold;	
+			float _RimThreshold, _DitherRadius;	
 
 			float4 frag (v2f i) : SV_Target
 			{
 				float3 viewDir = normalize(i.viewDir);
 				float3 dirToPlayer = _DitherAround - _WorldSpaceCameraPos;
 				float3 dirToFrag = i.wpos - _WorldSpaceCameraPos;
-				clip(dot(viewDir.xyz, dirToPlayer) - dot(viewDir.xyz, dirToFrag.xyz));
-
+				float3 fragToPlayer = _DitherAround - i.wpos;
+				float3 orthoganal = fragToPlayer - viewDir * dot(viewDir, fragToPlayer);
+				fixed doClip = step(length(orthoganal), _DitherRadius + i.wpos.y * _DitherRadius);
+				fixed thing = (dot(viewDir.xyz, dirToPlayer) - dot(viewDir.xyz, dirToFrag.xyz)) ;
+				clip(thing * doClip);
 				return (1);
 			}
 			ENDCG
@@ -163,7 +167,7 @@ Shader "Custom/Toon"
 
 			float4 _RimColor;
 			float _RimAmount;
-			float _RimThreshold;	
+			float _RimThreshold, _DitherRadius;	
 
 
 			float4 frag (v2f i) : SV_Target
@@ -172,7 +176,11 @@ Shader "Custom/Toon"
 				float3 viewDir = normalize(i.viewDir);
 				float3 dirToPlayer = _DitherAround - _WorldSpaceCameraPos;
 				float3 dirToFrag = i.wpos - _WorldSpaceCameraPos;
-				clip(dot(viewDir.xyz, dirToPlayer) - dot(viewDir.xyz, dirToFrag.xyz));
+				float3 fragToPlayer = _DitherAround - i.wpos;
+				float3 orthoganal = fragToPlayer - viewDir * dot(viewDir, fragToPlayer);
+				fixed doClip = step(length(orthoganal), _DitherRadius + i.wpos.y * _DitherRadius);
+				fixed thing = (dot(viewDir.xyz, dirToPlayer) - dot(viewDir.xyz, dirToFrag.xyz)) ;
+				clip(thing * doClip);
 
 				// Lighting below is calculated using Blinn-Phong,
 				// with values thresholded to creat the "toon" look.
