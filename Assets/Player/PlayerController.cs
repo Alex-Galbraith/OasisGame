@@ -9,10 +9,12 @@ public class PlayerController : MonoBehaviour
 
     private float speed = 4f;
     private Vector3 direction = Vector3.zero;
-    private float lookSpeed = 1f;
+    private float lookSpeed = 1.4f;
     private Quaternion lookRotation;
     public TowedObject towedObject;
     public GameManager gameManager;
+    public Transform homeBase;
+    public bool isTowing = false;
 
 
     // Start is called before the first frame update
@@ -24,6 +26,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!gameManager.canPlay) return;
         var forward = Input.GetAxisRaw("Vertical");
         var horizontal = Input.GetAxisRaw("Horizontal");
  
@@ -38,6 +41,16 @@ public class PlayerController : MonoBehaviour
         {
             rb.drag = 0.5f;
         }
+        // Restrict movement if outside the game boundary.
+        if ((Vector3.zero - transform.position).magnitude > gameManager.gameBoundaryDistance)
+        {
+            Vector3 velocityVector = rb.velocity.normalized;
+            Vector3 offsetPos = (transform.position - homeBase.position).normalized;
+            var dot = Mathf.Max(0, Vector3.Dot(velocityVector, offsetPos));
+            rb.velocity = rb.velocity - dot * offsetPos;
+        }
+
+
 
     }
 
@@ -63,6 +76,7 @@ public class PlayerController : MonoBehaviour
 
     public void TowObject (TowedObject towedObject)
     {
+        isTowing = true;
         this.towedObject = Instantiate(towedObject);
         this.towedObject.transform.SetParent(GameObject.Find("Tow").transform);
         this.towedObject.transform.localPosition = new Vector3(0f, 0f, -1f);
@@ -72,6 +86,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Dropoff"))
         {
+            isTowing = false;
             if (towedObject != null)
             {
                 gameManager.DropoffItem(towedObject.item);
