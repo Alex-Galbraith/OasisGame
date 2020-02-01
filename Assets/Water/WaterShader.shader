@@ -143,7 +143,7 @@ Shader "Custom/Water"
 	{
 		float shadow = SHADOW_ATTENUATION(i);
 
-		float2 flow = float2(-.1,0.01);
+		float2 flow = float2(-.1,0.01) * 0.1;
 		float wrappedTime = abs((_Time[1] * 0.5));
 		float noise = tex2D(_NoiseTex, (i.uv - flow * _Time)*_NoiseTiling).r;
 		float3 addNorm = lerp(tex2D(_NormTex, (i.uv - flow * _Time)*_NormTiling), tex2D(_NormTex, (i.uv  - flow * _Time)*_NormTiling + 0.5), wrappedTime) * _NormalStrength;
