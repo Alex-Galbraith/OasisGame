@@ -85,9 +85,9 @@ Shader "Custom/Toon"
 			float4 frag (v2f i) : SV_Target
 			{
 				float3 viewDir = normalize(i.viewDir);
-				float dirToPlayer = _DitherAround - _WorldSpaceCameraPos;
-				float dirToFrag = i.wpos - _WorldSpaceCameraPos;
-				clip(dot(viewDir, dirToPlayer) - dot(viewDir, dirToFrag));
+				float3 dirToPlayer = _DitherAround - _WorldSpaceCameraPos;
+				float3 dirToFrag = i.wpos - _WorldSpaceCameraPos;
+				clip(dot(viewDir.xyz, dirToPlayer) - dot(viewDir.xyz, dirToFrag.xyz));
 
 				return (1);
 			}
@@ -170,9 +170,9 @@ Shader "Custom/Toon"
 			{
 				float3 normal = normalize(i.worldNormal);
 				float3 viewDir = normalize(i.viewDir);
-				float dirToPlayer = _DitherAround - _WorldSpaceCameraPos;
-				float dirToFrag = i.wpos - _WorldSpaceCameraPos;
-				clip(dot(viewDir, dirToPlayer) - dot(viewDir, dirToFrag));
+				float3 dirToPlayer = _DitherAround - _WorldSpaceCameraPos;
+				float3 dirToFrag = i.wpos - _WorldSpaceCameraPos;
+				clip(dot(viewDir.xyz, dirToPlayer) - dot(viewDir.xyz, dirToFrag.xyz));
 
 				// Lighting below is calculated using Blinn-Phong,
 				// with values thresholded to creat the "toon" look.
