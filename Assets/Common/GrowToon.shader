@@ -1,12 +1,13 @@
 ﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
 
-Shader "Custom/Toon"
+Shader "Custom/GrowToon"
 {
 	Properties
 	{
 		_Color("Color", Color) = (1,1,1,1)
 		_MainTex("Main Texture", 2D) = "white" {}
 		_OffsetTex("Offset Texture", 2D) = "white" {}
+		_DelayTex("Delay Texture", 2D) = "white" {}
 		_DitherTex("Dither Texture", 2D) = "white" {}
 		_DitherRadius("Dither Radius", Float) = 1
 		_DropIn("DropIn", Float) = 0
@@ -49,7 +50,7 @@ Shader "Custom/Toon"
 			// with lighting and shadows.
 			#include "Lighting.cginc"
 			#include "AutoLight.cginc"
-			#include "DropInCommon.cginc"
+			#include "GrowInCommon.cginc"
 
 			struct appdata
 			{
@@ -71,7 +72,7 @@ Shader "Custom/Toon"
 			v2f vert (appdata v)
 			{
 				v2f o;
-				v.vertex = Offset(v.uv, v.vertex, _DropIn);
+				v.vertex.xyz = Grow(v.uv, v.vertex, _DropIn);
 				o.pos = UnityObjectToClipPos(v.vertex);
 				o.viewDir = WorldSpaceViewDir(v.vertex);
 				o.wpos =  mul(unity_ObjectToWorld, v.vertex);
