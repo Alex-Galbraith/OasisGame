@@ -10,9 +10,14 @@ public class Grower : MonoBehaviour
     public float from = -1;
     public float to = 2;
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
+        if (Renderer == null)
+        {
+            Renderer = GetComponentInChildren<Renderer>();
+        }
         Renderer.material = new Material(Renderer.sharedMaterial);
+
     }
 
     // Update is called once per frame

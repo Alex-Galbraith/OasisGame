@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public bool canPlay = false;
     public MainCamera mainCamera;
     public LightingController lightingController;
+    public GrowerGroup lilyPadGroup1;
+    public GrowerGroup lilyPadGroup2;
 
     public delegate void OnItemDeliveredHandler(ItemEnum item);
     public event OnItemDeliveredHandler OnItemDelivered;
@@ -28,6 +30,14 @@ public class GameManager : MonoBehaviour
         successfulItemCount++;
         OnItemDelivered?.Invoke(item);
         StartCoroutine(ImproveWater());
+        if (successfulItemCount == 2) {
+            lilyPadGroup1.Grow();
+        }
+        if (successfulItemCount == 4)
+        {
+            lilyPadGroup2.Grow();
+        }
+
         if (successfulItemCount >= itemGoal)
         {
             Debug.Log("YOU WIN!");
