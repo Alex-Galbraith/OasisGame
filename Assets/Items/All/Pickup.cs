@@ -12,10 +12,13 @@ public class Pickup : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            audioPlayer.PlayOneShot(pickupSound);
-            Destroy(this.gameObject);
-            collision.GetComponent<PlayerController>().TowObject(objectPrefab);
+            PlayerController player = collision.GetComponent<PlayerController>();
+            if (!player.isTowing)
+            {
+                audioPlayer.PlayOneShot(pickupSound);
+                Destroy(this.gameObject);
+                collision.GetComponent<PlayerController>().TowObject(objectPrefab);
+            }
         }
-        
     }
 }
