@@ -13,6 +13,7 @@ public class MainCamera : MonoBehaviour
     public AudioClip deliverySound;
     public AudioClip whiteNoiseFadeout;
     public AudioClip pop;
+    public AudioClip finaleMusic;
     public CanvasGroup panel;
 
 
@@ -59,7 +60,6 @@ public class MainCamera : MonoBehaviour
     public void DoCinematic()
     {
         cinematicTimer = 0f;
-        cancelableSound.clip = deliverySound;
         cancelableSound.Play();
         doingCinematic = true;
         StartCoroutine(ShowBase());
@@ -69,7 +69,6 @@ public class MainCamera : MonoBehaviour
     {
         cancelableSound.Stop();
         doingCinematic = false;
-        audioManager.PlayOneShot(pop);
 
     }
 
@@ -82,43 +81,63 @@ public class MainCamera : MonoBehaviour
             yield return 0;
         }
         FinishCinematic();
-
     }
 
     public void HandleItemDelivered (ItemEnum item)
     {
+        cancelableSound.clip = deliverySound;
         //DoCinematic();
         DoFinale();
     }
 
     public void DoFinale ()
     {
-        doingCinematic = true;
+        //doingCinematic = true;
+        gameManager.canPlay = false;
+        cancelableSound.PlayOneShot(finaleMusic);
         float distanceFromPoint = (target.position - pointOfInterest.position).magnitude;
-        distance = Mathf.Lerp(maxCameraDistance, minCameraDistance, distanceFromPoint / zoomedInDistance);
+        distance = maxCameraDistance;
         Vector3 targetPos = target.position;
         Vector3 cameraPos = targetPos + initalDir * distance;
         this.transform.position = cameraPos;
 
+        StartCoroutine(FadeOutMusic(audioManager));
         StartCoroutine(FinaleRoutine());
     }
 
     IEnumerator FinaleRoutine()
     {
-        float finaleDuration = 6f;
+        float finaleDuration = 12f;
         float speed = 0f;
         float finaleTimer = 0f;
         panel.gameObject.SetActive(true);
         panel.alpha = 0f;
         while (finaleTimer < finaleDuration)
         {
-            panel.alpha += Time.deltaTime / 6;
-            speed += Time.deltaTime * 2;
+            panel.alpha += Time.deltaTime / 12;
+            speed += Time.deltaTime / 8;
             finaleTimer += Time.deltaTime;
-            this.transform.position = Vector3.MoveTowards(transform.position, transform.position + Vector3.up, Time.deltaTime * speed);
+            this.maxCameraDistance += speed;
+            yield return 0;
+        }
+        StartCoroutine(FadeOutMusic(cancelableSound, 0.5f));
+        while (cancelableSound.volume > 0)
+        {
             yield return 0;
         }
         yield return 0;
         OnFinaleFinished?.Invoke();
+    }
+
+    IEnumerator FadeOutMusic(AudioSource source, float speed=1f)
+    {
+        var startVolume = source.volume;
+        while (startVolume > 0)
+        {
+            startVolume -= Time.deltaTime * speed;
+            source.volume = startVolume;
+            yield return 0;
+        }
+        source.Stop();
     }
 }

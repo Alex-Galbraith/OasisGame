@@ -72,4 +72,15 @@ public class MainCanvas : MonoBehaviour
         BackingCanvas.gameObject.SetActive(false);
         gameManager.canPlay = true;
     }
+
+    IEnumerator FadeOutMusic()
+    {
+        var startVolume = audioManager.volume;
+        while (startVolume > 0)
+        {
+            startVolume -= Time.deltaTime;
+            yield return 0;
+        }
+        audioManager.Stop();
+    }
 }

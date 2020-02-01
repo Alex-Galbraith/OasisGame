@@ -460,9 +460,10 @@ MonoBehaviour:
   gameManager: {fileID: 291801369}
   audioManager: {fileID: 1542476970}
   cancelableSound: {fileID: 1975138148}
-  deliverySound: {fileID: 8300000, guid: c5d958fd953584730ad7737ba0feb5c0, type: 3}
+  deliverySound: {fileID: 8300000, guid: ceb3415e43f284897badf1a4b18d0cf6, type: 3}
   whiteNoiseFadeout: {fileID: 8300000, guid: f2a9162ff2fa147f3874f1067e3c4373, type: 3}
   pop: {fileID: 8300000, guid: 3db16d09fb57b4e0fbdae164db8a2c6b, type: 3}
+  finaleMusic: {fileID: 8300000, guid: 67f64f714c79e4e8d8db5dae3ca78d0a, type: 3}
   panel: {fileID: 672053785}
   cinematicDuration: 4
   maxCameraDistance: 300
@@ -2474,7 +2475,7 @@ Transform:
   m_GameObject: {fileID: 1789272179}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 30, y: 1, z: 30}
+  m_LocalScale: {x: 50, y: 1, z: 50}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -2625,7 +2626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BackingCanvas: {fileID: 672053785}
   doneIntro: 0
-  skipIntro: 0
+  skipIntro: 1
   gameManager: {fileID: 291801369}
   audioManager: {fileID: 1542476970}
   chime: {fileID: 8300000, guid: 7aa380ccecc29450c8c8d3cf3dbe050c, type: 3}

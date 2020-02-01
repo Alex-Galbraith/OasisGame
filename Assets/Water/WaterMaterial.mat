@@ -101,10 +101,10 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Ambient: {r: 0.23829655, g: 0.3522465, b: 0.4811321, a: 1}
+    - _Ambient: {r: 0.31163225, g: 0.4433962, b: 0.32031482, a: 1}
     - _CausticTiling: {r: 1, g: 1, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DepthColor: {r: 0.47098613, g: 0.66224456, b: 0.6792453, a: 1}
+    - _DepthColor: {r: 0.8160377, g: 0.8698175, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FoamColor: {r: 1, g: 1, b: 1, a: 0.2627451}
     - _FoamTiling: {r: 1, g: 1, b: 0, a: 0}
