@@ -9,6 +9,8 @@ public class Grower : MonoBehaviour
     public float timeToPlay = 0.4f;
     public float from = -1;
     public float to = 2;
+
+    public float delay = 0;
     // Start is called before the first frame update
     public void Start()
     {
@@ -31,6 +33,7 @@ public class Grower : MonoBehaviour
     }
 
     private IEnumerator PlayRoutine(float time, float from, float to){
+        yield return new WaitForSeconds(delay);
         float nowTime = Time.time;
         float dtime = 0;
         while((dtime = Time.time - nowTime) < time){
