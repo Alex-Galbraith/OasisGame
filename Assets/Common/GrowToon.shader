@@ -12,8 +12,8 @@ Shader "Custom/GrowToon"
 		_DitherRadius("Dither Radius", Float) = 1
 		_DropIn("DropIn", Float) = 0
 		// Ambient light is applied uniformly to all surfaces on the object.
-		[HDR]
-		_AmbientColor("Ambient Color", Color) = (0.4,0.4,0.4,1)
+		//[HDR]
+		//_AmbientColor("Ambient Color", Color) = (0.4,0.4,0.4,1)
 		[HDR]
 		_SpecularColor("Specular Color", Color) = (0.9,0.9,0.9,1)
 		// Controls the size of the specular reflection.

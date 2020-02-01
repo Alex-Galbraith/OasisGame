@@ -10,9 +10,10 @@ Shader "Custom/Toon"
 		_DitherTex("Dither Texture", 2D) = "white" {}
 		_DitherRadius("Dither Radius", Float) = 1
 		_DropIn("DropIn", Float) = 0
+		_DropDir("Drop dir", Vector) = (0,10,0,0)
 		// Ambient light is applied uniformly to all surfaces on the object.
-		[HDR]
-		_AmbientColor("Ambient Color", Color) = (0.4,0.4,0.4,1)
+		//[HDR]
+		//_AmbientColor("Ambient Color", Color) = (0.4,0.4,0.4,1)
 		[HDR]
 		_SpecularColor("Specular Color", Color) = (0.9,0.9,0.9,1)
 		// Controls the size of the specular reflection.
@@ -126,7 +127,7 @@ Shader "Custom/Toon"
 			// with lighting and shadows.
 			#include "Lighting.cginc"
 			#include "AutoLight.cginc"
-			#include "GrowInCommon.cginc"
+			#include "DropInCommon.cginc"
 
 			struct appdata
 			{
@@ -156,7 +157,7 @@ Shader "Custom/Toon"
 			{
 				v2f o;
 				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
-				v.vertex.xyz = Grow(o.uv, v.vertex, _DropIn);
+				v.vertex.xyz = Offset(o.uv, v.vertex, _DropIn);
 				o.pos = UnityObjectToClipPos(v.vertex);
 				o.worldNormal = UnityObjectToWorldNormal(v.normal);		
 				o.viewDir = WorldSpaceViewDir(v.vertex);
