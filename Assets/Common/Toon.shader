@@ -7,7 +7,6 @@ Shader "Custom/Toon"
 		_Color("Color", Color) = (1,1,1,1)
 		_MainTex("Main Texture", 2D) = "white" {}
 		_DitherTex("Dither Texture", 2D) = "white" {}
-		_DitherAround("Dither around", Vector) = (0,0,0,0)
 		// Ambient light is applied uniformly to all surfaces on the object.
 		[HDR]
 		_AmbientColor("Ambient Color", Color) = (0.4,0.4,0.4,1)
@@ -51,21 +50,13 @@ Shader "Custom/Toon"
 			struct appdata
 			{
 				float4 vertex : POSITION;				
-				float4 uv : TEXCOORD0;
-				float3 normal : NORMAL;
 			};
 
 			struct v2f
 			{
 				float4 pos : SV_POSITION;
 				float3 wpos : TEXCOORD4;
-				float3 worldNormal : NORMAL;
-				float2 uv : TEXCOORD0;
 				float3 viewDir : TEXCOORD1;	
-				// Macro found in Autolight.cginc. Declares a vector4
-				// into the TEXCOORD2 semantic with varying precision 
-				// depending on platform target.
-				SHADOW_COORDS(2)
 			};
 
 			sampler2D _MainTex;
@@ -75,13 +66,8 @@ Shader "Custom/Toon"
 			{
 				v2f o;
 				o.pos = UnityObjectToClipPos(v.vertex);
-				o.worldNormal = UnityObjectToWorldNormal(v.normal);		
 				o.viewDir = WorldSpaceViewDir(v.vertex);
-				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
 				o.wpos =  mul(unity_ObjectToWorld, v.vertex);
-				// Defined in Autolight.cginc. Assigns the above shadow coordinate
-				// by transforming the vertex from world space to shadow-map space.
-				TRANSFER_SHADOW(o)
 				return o;
 			}
 			
@@ -98,10 +84,10 @@ Shader "Custom/Toon"
 
 			float4 frag (v2f i) : SV_Target
 			{
-				float3 normal = normalize(i.worldNormal);
 				float3 viewDir = normalize(i.viewDir);
-				float inDir = dot( _DitherAround - i.wpos, viewDir);
-				clip(inDir);
+				float dirToPlayer = _DitherAround - _WorldSpaceCameraPos;
+				float dirToFrag = i.wpos - _WorldSpaceCameraPos;
+				clip(dot(viewDir, dirToPlayer) - dot(viewDir, dirToFrag));
 
 				return (1);
 			}
@@ -179,12 +165,14 @@ Shader "Custom/Toon"
 			float _RimAmount;
 			float _RimThreshold;	
 
+
 			float4 frag (v2f i) : SV_Target
 			{
 				float3 normal = normalize(i.worldNormal);
 				float3 viewDir = normalize(i.viewDir);
-				float inDir = dot( _DitherAround - i.wpos, viewDir);
-				clip(inDir);
+				float dirToPlayer = _DitherAround - _WorldSpaceCameraPos;
+				float dirToFrag = i.wpos - _WorldSpaceCameraPos;
+				clip(dot(viewDir, dirToPlayer) - dot(viewDir, dirToFrag));
 
 				// Lighting below is calculated using Blinn-Phong,
 				// with values thresholded to creat the "toon" look.
