@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
 
         if (successfulItemCount >= itemGoal)
         {
-            Debug.Log("YOU WIN!");
+            mainCamera.DoFinale();
         }
     }
 

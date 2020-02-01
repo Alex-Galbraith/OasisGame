@@ -242,6 +242,7 @@ MonoBehaviour:
   timeToPlay: 0.4
   from: -1
   to: 2
+  delay: 0
 --- !u!1001 &84557177
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -363,6 +364,7 @@ MonoBehaviour:
   timeToPlay: 0.4
   from: -1
   to: 2
+  delay: 0
 --- !u!1001 &109429885
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -484,6 +486,7 @@ MonoBehaviour:
   timeToPlay: 0.4
   from: -1
   to: 2
+  delay: 0
 --- !u!1 &153518472
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,7 +537,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: cb1cf74e55afd4b7dbbb4af809d36d85, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -909,6 +912,7 @@ MonoBehaviour:
   timeToPlay: 0.4
   from: -1
   to: 2
+  delay: 0
 --- !u!1 &382404714 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1075309272638884436, guid: 4182eeb2b31867f4b92679ea3ba95ad8,
@@ -1266,6 +1270,7 @@ MonoBehaviour:
   timeToPlay: 0.4
   from: -1
   to: 2
+  delay: 0
 --- !u!1001 &464044187
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1387,6 +1392,7 @@ MonoBehaviour:
   timeToPlay: 0.4
   from: -1
   to: 2
+  delay: 0
 --- !u!1001 &549167321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1508,6 +1514,7 @@ MonoBehaviour:
   timeToPlay: 0.4
   from: -1
   to: 2
+  delay: 0
 --- !u!1 &612224957
 GameObject:
   m_ObjectHideFlags: 0
@@ -1785,6 +1792,7 @@ MonoBehaviour:
   timeToPlay: 0.4
   from: -1
   to: 2
+  delay: 0
 --- !u!1 &672053784
 GameObject:
   m_ObjectHideFlags: 0
@@ -2018,6 +2026,7 @@ MonoBehaviour:
   timeToPlay: 0.4
   from: -1
   to: 2
+  delay: 0
 --- !u!1 &774681438
 GameObject:
   m_ObjectHideFlags: 0
@@ -2319,6 +2328,7 @@ MonoBehaviour:
   timeToPlay: 0.4
   from: -1
   to: 2
+  delay: 0
 --- !u!1001 &1018399903
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2440,6 +2450,7 @@ MonoBehaviour:
   timeToPlay: 0.4
   from: -1
   to: 2
+  delay: 0
 --- !u!1 &1061875115
 GameObject:
   m_ObjectHideFlags: 0
@@ -2749,6 +2760,7 @@ MonoBehaviour:
   timeToPlay: 0.4
   from: -1
   to: 2
+  delay: 0
 --- !u!1 &1241424091
 GameObject:
   m_ObjectHideFlags: 0
@@ -2997,6 +3009,7 @@ MonoBehaviour:
   timeToPlay: 0.4
   from: -1
   to: 2
+  delay: 0
 --- !u!1 &1334732063
 GameObject:
   m_ObjectHideFlags: 0
@@ -3321,6 +3334,7 @@ MonoBehaviour:
   timeToPlay: 0.4
   from: -1
   to: 2
+  delay: 0
 --- !u!1 &1438015175
 GameObject:
   m_ObjectHideFlags: 0
@@ -3668,6 +3682,7 @@ MonoBehaviour:
   timeToPlay: 0.4
   from: -1
   to: 2
+  delay: 0
 --- !u!1 &1499984490
 GameObject:
   m_ObjectHideFlags: 0
@@ -4203,6 +4218,7 @@ MonoBehaviour:
   timeToPlay: 0.4
   from: -1
   to: 2
+  delay: 0
 --- !u!1 &1646013881
 GameObject:
   m_ObjectHideFlags: 0
@@ -5104,6 +5120,7 @@ MonoBehaviour:
   timeToPlay: 0.4
   from: -1
   to: 2
+  delay: 0
 --- !u!1 &2020267085
 GameObject:
   m_ObjectHideFlags: 0
@@ -5337,6 +5354,7 @@ MonoBehaviour:
   timeToPlay: 0.4
   from: -1
   to: 2
+  delay: 0
 --- !u!1 &2132638913
 GameObject:
   m_ObjectHideFlags: 0
