@@ -70,8 +70,8 @@ public class MirrorReflection : MonoBehaviour {
         // plane. This way we clip everything below/above it for free.
         Vector4 clipPlane = CameraSpacePlane(reflectionCamera, pos, normal, 1.0f);
         Matrix4x4 m = cam.projectionMatrix;
-        if (ignoreJitter)
-            cam.projectionMatrix = cam.nonJitteredProjectionMatrix;
+        //if (ignoreJitter)
+        //    cam.projectionMatrix = cam.nonJitteredProjectionMatrix;
   
         //Matrix4x4 projection = cam.projectionMatrix;
         Matrix4x4 projection = cam.CalculateObliqueMatrix(clipPlane);
