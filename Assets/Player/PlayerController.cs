@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody rb;
 
     private float speed = 4f;
-    private Vector3 direction;
+    private Vector3 direction = Vector3.zero;
     private float lookSpeed = 1f;
     private Quaternion lookRotation;
 
@@ -24,8 +24,10 @@ public class PlayerController : MonoBehaviour
     {
         var forward = Input.GetAxisRaw("Vertical");
         var horizontal = Input.GetAxisRaw("Horizontal");
+ 
 
-        if (forward != 0 || horizontal != 0) DoMove(forward, horizontal);
+        DoMove(forward, horizontal);
+        lookRotation = Quaternion.LookRotation(direction);
         UpdateFacing();
         if (forward == -1f)
         {
@@ -48,14 +50,12 @@ public class PlayerController : MonoBehaviour
 
         direction = (forwardVector + horizontalVector);
         rb.AddForce(forwardVector * speed);
-
     }
 
     void UpdateFacing()
     {
         if (direction != Vector3.zero)
         {
-            lookRotation = Quaternion.LookRotation(direction);
             transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * lookSpeed);
         }
     }
