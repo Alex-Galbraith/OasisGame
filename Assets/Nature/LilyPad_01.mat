@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WaterMaterial
-  m_Shader: {fileID: 4800000, guid: eb2a023b906d2e847b513b8a9fb5c722, type: 3}
-  m_ShaderKeywords: _REFLECT_ON
+  m_Name: LilyPad_01
+  m_Shader: {fileID: 4800000, guid: 85275f3229bdf9e41b623719d3cf81c1, type: 3}
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -23,7 +23,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _CausticTex:
+    - _DelayTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -39,12 +39,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
+    - _DitherTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _FoamTex:
-        m_Texture: {fileID: 2800000, guid: 66f0de14bfaef22429804f4f8c911ba2, type: 3}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -55,23 +55,15 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _NoiseTex:
-        m_Texture: {fileID: 2800000, guid: 66f0de14bfaef22429804f4f8c911ba2, type: 3}
-        m_Scale: {x: 2, y: 2}
-        m_Offset: {x: 0, y: 0}
-    - _NormTex:
-        m_Texture: {fileID: 2800000, guid: 90e89a3cb3ba8ea439a6a4d455bb2539, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 0}
+    - _OffsetTex:
+        m_Texture: {fileID: 2800000, guid: f49442c15b9e4d9419755584fee7c12a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _ReflectionTex:
+    - _ParallaxMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -79,35 +71,25 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
+    - _DitherRadius: 1
+    - _DropIn: 0
     - _DstBlend: 0
-    - _FoamNoiseStrength: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _IntersectionBias: 3.29
-    - _IntersectionPower: 0.356
-    - _MaxDepth: 53.21
     - _Metallic: 0
     - _Mode: 0
-    - _NormalStrength: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Reflect: 1
-    - _Refraction: 1.38
-    - _RimPower: 0.83
+    - _RimAmount: 0.716
+    - _RimThreshold: 0.1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Ambient: {r: 0.23829655, g: 0.3522465, b: 0.4811321, a: 1}
-    - _CausticTiling: {r: 1, g: 1, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DepthColor: {r: 0.50907797, g: 0.7105662, b: 0.754717, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FoamColor: {r: 0.8632076, g: 0.9724732, b: 1, a: 1}
-    - _FoamTiling: {r: 50, g: 50, b: 50, a: 0}
-    - _MainColor: {r: 1, g: 1, b: 1, a: 1}
-    - _NoiseTiling: {r: 0.1, g: 0.1, b: 0, a: 0}
-    - _NormTiling: {r: 5, g: 5, b: 5, a: 0}
+    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecularColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}

@@ -72,4 +72,5 @@ public class MainCanvas : MonoBehaviour
         BackingCanvas.gameObject.SetActive(false);
         gameManager.canPlay = true;
     }
+
 }

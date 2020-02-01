@@ -26,6 +26,7 @@ public class LightingController : MonoBehaviour
         waterMaterial.SetColor("_FoamColor", Color.Lerp(UglyFoamColor, NiceFoamColor, value));
         Shader.SetGlobalColor("_AmbientColor", Color.Lerp(UglyAmbientColor, NiceAmbientColor, value));
         Light.color = Color.Lerp(UglyLightColor,NiceLightColor, value);
+        Niceness = value;
     }
 
     /// <summary>
