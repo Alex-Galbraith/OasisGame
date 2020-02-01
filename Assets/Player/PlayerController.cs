@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 direction = Vector3.zero;
     private float lookSpeed = 1f;
     private Quaternion lookRotation;
+    public TowedObject towedObject;
+    public GameManager gameManager;
 
 
     // Start is called before the first frame update
@@ -25,9 +27,8 @@ public class PlayerController : MonoBehaviour
         var forward = Input.GetAxisRaw("Vertical");
         var horizontal = Input.GetAxisRaw("Horizontal");
  
-
         DoMove(forward, horizontal);
-        lookRotation = Quaternion.LookRotation(direction);
+        if (direction != Vector3.zero) lookRotation = Quaternion.LookRotation(direction);
         UpdateFacing();
         if (forward == -1f)
         {
@@ -57,6 +58,25 @@ public class PlayerController : MonoBehaviour
         if (direction != Vector3.zero)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * lookSpeed);
+        }
+    }
+
+    public void TowObject (TowedObject towedObject)
+    {
+        this.towedObject = Instantiate(towedObject);
+        this.towedObject.transform.SetParent(GameObject.Find("Tow").transform);
+        this.towedObject.transform.localPosition = new Vector3(0f, 0f, -1f);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Dropoff"))
+        {
+            if (towedObject != null)
+            {
+                gameManager.DropoffItem(towedObject.item);
+                Destroy(towedObject.gameObject);
+            }
         }
     }
 }
