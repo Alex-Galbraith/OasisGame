@@ -28,6 +28,7 @@ public class MainCamera : MonoBehaviour
     public float cameraMoveSpeed = 100f;
     private Vector3 currentVelocity;
     private bool doingCinematic;
+    private float buildingYOffset = 2f;
 
     Vector3 initalDir;
 
@@ -61,7 +62,7 @@ public class MainCamera : MonoBehaviour
     {
         cinematicTimer = 0f;
         cancelableSound.Play();
-        doingCinematic = true;
+        //doingCinematic = true;
         StartCoroutine(ShowBase());
     }
 
@@ -74,20 +75,27 @@ public class MainCamera : MonoBehaviour
 
     IEnumerator ShowBase()
     {
+        var normalMax = maxCameraDistance;
         while (cinematicTimer < cinematicDuration)
         {
             cinematicTimer += Time.deltaTime;
-            this.transform.position = Vector3.MoveTowards(transform.position, pointOfInterest.position + new Vector3(0f, 10f, -10f), Time.deltaTime * cameraMoveSpeed);
+            this.maxCameraDistance += Time.deltaTime * 8;
             yield return 0;
         }
+        while (maxCameraDistance > normalMax)
+        {
+            this.maxCameraDistance -= Time.deltaTime * 8;
+            yield return 0;
+        }
+        maxCameraDistance = normalMax;
         FinishCinematic();
     }
 
     public void HandleItemDelivered (ItemEnum item)
     {
         cancelableSound.clip = deliverySound;
-        //DoCinematic();
-        DoFinale();
+        DoCinematic();
+        //DoFinale();
     }
 
     public void DoFinale ()
