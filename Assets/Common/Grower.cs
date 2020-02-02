@@ -24,6 +24,8 @@ public class Grower : MonoBehaviour
 
         collider = GetComponentInChildren<Collider>();
         if (collider) collider.enabled = false;
+        SetTime(from);
+
     }
 
     // Update is called once per frame

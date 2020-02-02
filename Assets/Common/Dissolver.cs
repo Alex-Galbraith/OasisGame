@@ -19,7 +19,7 @@ public class Dissolver : MonoBehaviour
             Renderer = GetComponentInChildren<Renderer>();
         }
         Renderer.material = new Material(Renderer.sharedMaterial);
-
+        SetTime(from);
     }
 
     // Update is called once per frame
