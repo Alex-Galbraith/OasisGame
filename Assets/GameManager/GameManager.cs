@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public GrowerGroup TreeGroup1;
     public GrowerGroup TreeGroup2;
     public GrowerGroup TreeGroup3;
+    public Grower DockGrower;
 
     public delegate void OnItemDeliveredHandler(ItemEnum item);
     public event OnItemDeliveredHandler OnItemDelivered;
@@ -44,6 +45,10 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("TREES!");
             StartCoroutine(GrowTrees());
+        }
+        if (item == ItemEnum.Wood)
+        {
+            DockGrower.Play();
         }
 
         if (successfulItemCount >= itemGoal)
