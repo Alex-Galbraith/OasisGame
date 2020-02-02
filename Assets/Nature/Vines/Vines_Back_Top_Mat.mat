@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Vines_Front_Top_Mat
+  m_Name: Vines_Back_Top_Mat
   m_Shader: {fileID: 4800000, guid: 9b95782af3d8d594bbc1dde30923c4fd, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -64,7 +64,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OffsetTex:
-        m_Texture: {fileID: 2800000, guid: ceaf36155d8441248b2303a3f22a2683, type: 3}
+        m_Texture: {fileID: 2800000, guid: 10534ece345b63447893560dd57cfd19, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
@@ -80,7 +80,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DissolveScale: 15.75
-    - _DissolveVal: 1.07
+    - _DissolveVal: 1.02
     - _DitherRadius: -0.4
     - _DropIn: 2.06
     - _DstBlend: 0
