@@ -12,6 +12,8 @@ public class Grower : MonoBehaviour
 
     public float delay = 0;
     // Start is called before the first frame update
+
+    private Collider collider;
     public void Start()
     {
         if (Renderer == null)
@@ -20,6 +22,8 @@ public class Grower : MonoBehaviour
         }
         Renderer.material = new Material(Renderer.sharedMaterial);
 
+        collider = GetComponentInChildren<Collider>();
+        if (collider) collider.enabled = false;
     }
 
     // Update is called once per frame
@@ -29,6 +33,7 @@ public class Grower : MonoBehaviour
     }
     [ContextMenu("Play")]
     public void Play(){
+        if (collider) { collider.enabled = true; }
         StartCoroutine(PlayRoutine(timeToPlay, from, to));
     }
 
