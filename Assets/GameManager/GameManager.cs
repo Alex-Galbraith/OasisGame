@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public GrowerGroup TreeGroup1;
     public GrowerGroup TreeGroup2;
     public GrowerGroup TreeGroup3;
-    public Grower DockGrower;
+    public GrowerGroup DockGroup;
     public Grower BalconyTopGrower;
     public Grower BalconyMidGrower;
     public Grower WindowGrower;
@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
         }
         if (item == ItemEnum.Wood)
         {
-            DockGrower.Play();
+            DockGroup.Grow();
         }
         if (item == ItemEnum.Metal)
         {
