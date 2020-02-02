@@ -89,5 +89,5 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DropDir: {r: 0, g: 10, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SpecularColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+    - _RimColor: {r: 0.0009765625, g: 0.0009765625, b: 0.0009765625, a: 1}
+    - _SpecularColor: {r: 0.0008808211, g: 0.0008808211, b: 0.0008808211, a: 1}

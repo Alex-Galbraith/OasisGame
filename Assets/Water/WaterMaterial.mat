@@ -104,9 +104,9 @@ Material:
     - _Ambient: {r: 0.23829655, g: 0.3522465, b: 0.4811321, a: 1}
     - _CausticTiling: {r: 1, g: 1, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DepthColor: {r: 0.50907797, g: 0.7105662, b: 0.754717, a: 1}
+    - _DepthColor: {r: 0.34531865, g: 0.6820817, b: 0.754717, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FoamColor: {r: 0.8632076, g: 0.9724732, b: 1, a: 1}
+    - _FoamColor: {r: 0.7783019, g: 0.9556603, b: 1, a: 1}
     - _FoamTiling: {r: 50, g: 50, b: 50, a: 0}
     - _MainColor: {r: 1, g: 1, b: 1, a: 1}
     - _NoiseTiling: {r: 0.1, g: 0.1, b: 0, a: 0}
