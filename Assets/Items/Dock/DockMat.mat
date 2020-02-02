@@ -68,11 +68,10 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DitherRadius: 1
-    - _DropIn: 1.04
+    - _DropIn: -100
     - _DstBlend: 0
-    - _Flip: 0
     - _GlossMapScale: 1
-    - _Glossiness: 123.74
+    - _Glossiness: 100000
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
@@ -86,8 +85,8 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.7075472, g: 0.49791786, b: 0.31706125, a: 1}
+    - _Color: {r: 0.7058824, g: 0.49803922, b: 0.31764707, a: 1}
     - _DropDir: {r: 0, g: 10, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimColor: {r: 0.0009765625, g: 0.0009765625, b: 0.0009765625, a: 0}
-    - _SpecularColor: {r: 0, g: 0, b: 0, a: 1}
+    - _RimColor: {r: 0.00014935662, g: 0.00012254903, b: 0.00012254903, a: 1}
+    - _SpecularColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
