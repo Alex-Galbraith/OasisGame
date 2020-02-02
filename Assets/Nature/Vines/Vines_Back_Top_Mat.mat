@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: LilyPad_05
-  m_Shader: {fileID: 4800000, guid: 85275f3229bdf9e41b623719d3cf81c1, type: 3}
+  m_Name: Vines_Front_Top_Mat
+  m_Shader: {fileID: 4800000, guid: 9b95782af3d8d594bbc1dde30923c4fd, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -24,7 +24,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DelayTex:
-        m_Texture: {fileID: 2800000, guid: 40cbff927168d864c9c442e93f8bf0eb, type: 3}
+        m_Texture: {fileID: 2800000, guid: ceaf36155d8441248b2303a3f22a2683, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -39,8 +39,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Dissolve:
+        m_Texture: {fileID: 2800000, guid: 66f0de14bfaef22429804f4f8c911ba2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _DitherTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: a56033ef13c277f42b7afc0dd97ada55, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -48,7 +52,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 08fb60e639b3fb644adca74b49a2da2c, type: 3}
+        m_Texture: {fileID: 2800000, guid: c8f5539f3106de84c8737aa9200035a8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -60,18 +64,24 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OffsetTex:
-        m_Texture: {fileID: 2800000, guid: c2a2d474d45801c4f93e5d9bde008403, type: 3}
+        m_Texture: {fileID: 2800000, guid: ceaf36155d8441248b2303a3f22a2683, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Ramp:
+        m_Texture: {fileID: 2800000, guid: a56033ef13c277f42b7afc0dd97ada55, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DitherRadius: 1
+    - _DissolveScale: 15.75
+    - _DissolveVal: 1.07
+    - _DitherRadius: -0.4
     - _DropIn: 2.06
     - _DstBlend: 0
     - _GlossMapScale: 1
@@ -82,7 +92,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RimAmount: 0.716
+    - _RimAmount: 1
     - _RimThreshold: 0.1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -93,4 +103,4 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 0.00390625, g: 0.00390625, b: 0.00390625, a: 1}
-    - _SpecularColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+    - _SpecularColor: {r: 1, g: 0.9790565, b: 0.8443396, a: 1}
