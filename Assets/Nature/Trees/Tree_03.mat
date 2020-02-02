@@ -74,6 +74,7 @@ Material:
     - _DitherRadius: 1
     - _DropIn: 3.51
     - _DstBlend: 0
+    - _Flip: -1
     - _GlossMapScale: 1
     - _Glossiness: 42.32
     - _GlossyReflections: 1
@@ -93,4 +94,4 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 0.015625, g: 0.015625, b: 0.015625, a: 1}
-    - _SpecularColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+    - _SpecularColor: {r: 0.0008808211, g: 0.0008808211, b: 0.0008808211, a: 1}
