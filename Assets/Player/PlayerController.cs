@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public GameManager gameManager;
     public Transform homeBase;
     public bool isTowing = false;
-
+    public Transform towbar;
 
     // Start is called before the first frame update
     void Start()
@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
     {
         isTowing = true;
         this.towedObject = Instantiate(towedObject);
-        this.towedObject.transform.SetParent(GameObject.Find("Tow").transform);
+        this.towedObject.transform.SetParent(towbar);
         this.towedObject.transform.localPosition = new Vector3(0f, 0f, -1f);
     }
 

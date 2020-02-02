@@ -72,12 +72,12 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DitherRadius: 1
-    - _DropIn: 12.8
+    - _DropIn: 3
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 52.38
     - _GlossyReflections: 1
-    - _GrowScale: 40
+    - _GrowScale: 0
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
