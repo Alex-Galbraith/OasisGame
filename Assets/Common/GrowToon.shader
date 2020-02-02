@@ -12,6 +12,8 @@ Shader "Custom/GrowToon"
 		_DitherRadius("Dither Radius", Float) = 1
 		_DropIn("DropIn", Float) = 0
 		_GrowScale("Grow scale", Float) = 40
+		_Flip("Flip", Float) = -1
+
 		
 		// Ambient light is applied uniformly to all surfaces on the object.
 		//[HDR]

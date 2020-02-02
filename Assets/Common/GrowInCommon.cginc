@@ -5,10 +5,11 @@
 sampler2D _OffsetTex;
 sampler2D _DelayTex;
 float _GrowScale;
+fixed _Flip;
 
 float3 Grow(float2 uv, float4 posIn, fixed time){
     float3 val = tex2Dlod(_OffsetTex, float4(uv,0,0)).xyz ;
-    float delay = tex2Dlod(_DelayTex, float4(uv,0,0)).r ;
+    float delay = tex2Dlod(_DelayTex, float4(uv,0,0)).r * _Flip - _Flip ;
     
     val.x -=0.5;
     val.z -=0.5;
