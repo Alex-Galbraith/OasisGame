@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BalconyMid
+  m_Name: BalconyTop
   m_Shader: {fileID: 4800000, guid: 0b1c30fd6a4b3384ea55a55b56223909, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -44,7 +44,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 53de68216f7bd3145855537f1a449641, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2e6a7567aa6d8934bbe337781e410370, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -56,7 +56,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OffsetTex:
-        m_Texture: {fileID: 2800000, guid: c423132fd3312d4448e8bb7fa46976c0, type: 3}
+        m_Texture: {fileID: 2800000, guid: c51d8e59ca695d7469e2b3629172ff54, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
