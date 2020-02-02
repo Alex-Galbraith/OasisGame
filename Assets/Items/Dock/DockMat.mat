@@ -68,8 +68,9 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DitherRadius: 1
-    - _DropIn: -100
+    - _DropIn: -1.2
     - _DstBlend: 0
+    - _Flip: 1
     - _GlossMapScale: 1
     - _Glossiness: 100000
     - _GlossyReflections: 1
