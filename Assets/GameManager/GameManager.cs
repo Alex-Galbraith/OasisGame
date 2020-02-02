@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public Grower BalconyTopGrower;
     public Grower BalconyMidGrower;
     public Grower WindowGrower;
+    public DissolverGroup VineGroup;
 
     public delegate void OnItemDeliveredHandler(ItemEnum item);
     public event OnItemDeliveredHandler OnItemDelivered;
@@ -59,6 +60,10 @@ public class GameManager : MonoBehaviour
         if ( item == ItemEnum.Glass)
         {
             WindowGrower.Play();
+        }
+        if (item == ItemEnum.VineSeeds)
+        {
+            VineGroup.Play();
         }
 
         if (successfulItemCount >= itemGoal)

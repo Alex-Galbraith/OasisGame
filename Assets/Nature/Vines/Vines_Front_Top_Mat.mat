@@ -80,7 +80,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DissolveScale: 15.75
-    - _DissolveVal: 1.07
+    - _DissolveVal: 0.42
     - _DitherRadius: -0.4
     - _DropIn: 2.06
     - _DstBlend: 0
