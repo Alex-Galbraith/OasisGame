@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public Grower DockGrower;
     public Grower BalconyTopGrower;
     public Grower BalconyMidGrower;
+    public Grower WindowGrower;
 
     public delegate void OnItemDeliveredHandler(ItemEnum item);
     public event OnItemDeliveredHandler OnItemDelivered;
@@ -45,7 +46,6 @@ public class GameManager : MonoBehaviour
         }
         if (item == ItemEnum.Seeds)
         {
-            Debug.Log("TREES!");
             StartCoroutine(GrowTrees());
         }
         if (item == ItemEnum.Wood)
@@ -55,6 +55,10 @@ public class GameManager : MonoBehaviour
         if (item == ItemEnum.Metal)
         {
             StartCoroutine(GrowBalcony());
+        }
+        if ( item == ItemEnum.Glass)
+        {
+            WindowGrower.Play();
         }
 
         if (successfulItemCount >= itemGoal)

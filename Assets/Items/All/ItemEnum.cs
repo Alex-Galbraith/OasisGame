@@ -4,5 +4,5 @@
     Wood,
     Seeds,
     Glass,
-    Paint
+    VineSeeds
 }
