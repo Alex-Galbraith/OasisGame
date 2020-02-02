@@ -19,10 +19,10 @@ Shader "Custom/GrowToon"
 		[HDR]
 		_SpecularColor("Specular Color", Color) = (0.9,0.9,0.9,1)
 		// Controls the size of the specular reflection.
-		_Glossiness("Glossiness", Float) = 32
+		_Glossiness("Glossiness", Float) = 3200
 		[HDR]
-		_RimColor("Rim Color", Color) = (1,1,1,1)
-		_RimAmount("Rim Amount", Range(0, 1)) = 0.716
+		_RimColor("Rim Color", Color) = (0,0,0,0)
+		_RimAmount("Rim Amount", Range(0, 1)) = 1
 		// Control how smoothly the rim blends when approaching unlit
 		// parts of the surface.
 		_RimThreshold("Rim Threshold", Range(0, 1)) = 0.1		

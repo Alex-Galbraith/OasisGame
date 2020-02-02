@@ -10,6 +10,7 @@ Shader "Custom/Toon"
 		_DitherTex("Dither Texture", 2D) = "white" {}
 		_DitherRadius("Dither Radius", Float) = 1
 		_DropIn("DropIn", Float) = 0
+		_Flip("DropIn Flip", Float) = 0
 		_DropDir("Drop dir", Vector) = (0,10,0,0)
 		// Ambient light is applied uniformly to all surfaces on the object.
 		//[HDR]
