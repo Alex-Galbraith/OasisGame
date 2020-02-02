@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     public LightingController lightingController;
     public GrowerGroup lilyPadGroup1;
     public GrowerGroup lilyPadGroup2;
+    public GrowerGroup TreeGroup1;
+    public GrowerGroup TreeGroup2;
+    public GrowerGroup TreeGroup3;
 
     public delegate void OnItemDeliveredHandler(ItemEnum item);
     public event OnItemDeliveredHandler OnItemDelivered;
@@ -25,7 +28,7 @@ public class GameManager : MonoBehaviour
         lightingController.SetNiceness(0f);
     }
 
-    public void DropoffItem (ItemEnum item)
+    public void DropoffItem(ItemEnum item)
     {
         successfulItemCount++;
         OnItemDelivered?.Invoke(item);
@@ -36,6 +39,11 @@ public class GameManager : MonoBehaviour
         if (successfulItemCount == 4)
         {
             lilyPadGroup2.Grow();
+        }
+        if (item == ItemEnum.Seeds)
+        {
+            Debug.Log("TREES!");
+            StartCoroutine(GrowTrees());
         }
 
         if (successfulItemCount >= itemGoal)
@@ -49,7 +57,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    IEnumerator ImproveWater ()
+    IEnumerator ImproveWater()
     {
         Debug.Log("Improve water");
         float speed = 0.25f;
@@ -62,6 +70,15 @@ public class GameManager : MonoBehaviour
             lightingController.SetNiceness(lightingController.Niceness += Time.deltaTime * speed);
             yield return 0;
         }
+    }
+
+    IEnumerator GrowTrees()
+    {
+        TreeGroup1.Grow();
+        yield return new WaitForSeconds(0.5f);
+        TreeGroup2.Grow();
+        yield return new WaitForSeconds(0.5f);
+        TreeGroup3.Grow();
     }
 
 }

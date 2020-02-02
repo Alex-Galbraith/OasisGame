@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8721666994636138908}
   - component: {fileID: 6184768971235353795}
   m_Layer: 0
-  m_Name: TowedObject
+  m_Name: SeedsTowed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3ab1c84b2ba429a9cd7afe11e069fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: 1
+  item: 2
 --- !u!23 &8721666994636138908
 MeshRenderer:
   m_ObjectHideFlags: 0
