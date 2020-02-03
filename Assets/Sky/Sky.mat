@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Balcony_Pickup
-  m_Shader: {fileID: 4800000, guid: 0b1c30fd6a4b3384ea55a55b56223909, type: 3}
+  m_Name: Sky
+  m_Shader: {fileID: 4800000, guid: d478e6ae500894f8e8fc9896c464257a, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -44,7 +44,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: cb8b39cced54d4535ac93bb18ce433bb, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -68,11 +68,11 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DitherRadius: 1
-    - _DropIn: 25.31
+    - _DropIn: 0
     - _DstBlend: 0
     - _Flip: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 92.79
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
@@ -86,7 +86,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.49724102, g: 0.64990383, b: 0.6981132, a: 1}
     - _DropDir: {r: 0, g: 10, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 0.0009765625, g: 0.0009765625, b: 0.0009765625, a: 1}

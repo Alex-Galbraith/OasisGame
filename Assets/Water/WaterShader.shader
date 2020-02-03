@@ -26,8 +26,6 @@ Shader "Custom/Water"
 		_NoiseTiling("Noise Tiling", Vector) = (1,1,0,0)
 		_NormTex("Norm", 2D) = "bump"
 		_NormTiling("Norm Tiling", Vector) = (1,1,0,0)
-		_CausticTex("Caustic Texture", 2D) = "white"
-		_CausticTiling("Caustic Tiling", Vector) = (1, 1, 0, 0)
 		[HideInInspector] _ReflectionTex("", 2D) = "white"
 	}
 
@@ -101,13 +99,13 @@ Shader "Custom/Water"
 	
 
 	sampler2D _CameraDepthTexture, _ReflectionTex;
-	sampler2D _NoiseTex, _NormTex, _BackgroundTexture, _FoamTex, _CausticTex;
+	sampler2D _NoiseTex, _NormTex, _BackgroundTexture, _FoamTex;
 	float4x4 unity_WorldToLight, _ShadowDepthMatrix;
 	fixed4 _FoamColor, _DepthColor, _Ambient;
 	fixed _RimPower;
 	fixed _IntersectionPower, _IntersectionBias;
 	fixed  _MaxDepth, _Refraction, _NormalStrength, _FoamNoiseStrength, _Reflect;
-	fixed2 _NoiseTiling, _NormTiling, _FoamTiling, _CausticTiling;
+	fixed2 _NoiseTiling, _NormTiling, _FoamTiling;
 
 
 	
@@ -152,8 +150,7 @@ Shader "Custom/Water"
 		float3 worldNormal = normalize(i.worldNormal + (addNorm*noise));
 		float3 worldViewDir = normalize(i.worldViewDir);
 
-		float rim = 1 - (dot(worldNormal, worldViewDir)) * _RimPower;
-		rim = clamp(rim, 0, 1) * _Reflect;
+		
 		half3 worldRefl = reflect(-worldViewDir, i.worldNormal);
 
 
@@ -170,6 +167,9 @@ Shader "Custom/Water"
 
 		float4 c = 0;
 		c.a = 1;
+
+		float rim = 1 - (dot(worldNormal, worldViewDir)) * _RimPower;
+		rim = clamp(rim, 0, 1) * _Reflect * skyColor.a;
 		c.rgb = rim * skyColor + (_FoamColor * intersect * _FoamColor.a * (shadow+_Ambient)) ;
 		//c.rgb = c.rgb * c.a;
 

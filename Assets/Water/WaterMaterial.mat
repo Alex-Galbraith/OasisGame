@@ -60,7 +60,7 @@ Material:
         m_Scale: {x: 2, y: 2}
         m_Offset: {x: 0, y: 0}
     - _NormTex:
-        m_Texture: {fileID: 2800000, guid: 90e89a3cb3ba8ea439a6a4d455bb2539, type: 3}
+        m_Texture: {fileID: 2800000, guid: 53a12dc577c6741bc80164967df63bf6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -84,12 +84,12 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _IntersectionBias: 3.29
-    - _IntersectionPower: 0.356
-    - _MaxDepth: 53.21
+    - _IntersectionBias: -7.06
+    - _IntersectionPower: 0.51
+    - _MaxDepth: 9.8
     - _Metallic: 0
     - _Mode: 0
-    - _NormalStrength: 0
+    - _NormalStrength: 0.001
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _Reflect: 1
@@ -104,10 +104,10 @@ Material:
     - _Ambient: {r: 0.23829655, g: 0.3522465, b: 0.4811321, a: 1}
     - _CausticTiling: {r: 1, g: 1, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DepthColor: {r: 0.34531865, g: 0.6820817, b: 0.754717, a: 1}
+    - _DepthColor: {r: 0.39520293, g: 0.7158969, b: 0.7830189, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FoamColor: {r: 0.7783019, g: 0.9556603, b: 1, a: 1}
     - _FoamTiling: {r: 50, g: 50, b: 50, a: 0}
     - _MainColor: {r: 1, g: 1, b: 1, a: 1}
     - _NoiseTiling: {r: 0.1, g: 0.1, b: 0, a: 0}
-    - _NormTiling: {r: 5, g: 5, b: 5, a: 0}
+    - _NormTiling: {r: 10, g: 10, b: 10, a: 0}

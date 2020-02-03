@@ -70,6 +70,7 @@ Material:
     - _DitherRadius: 0.3
     - _DropIn: 0
     - _DstBlend: 0
+    - _Flip: 0
     - _GlossMapScale: 1
     - _Glossiness: 100
     - _GlossyReflections: 1
@@ -90,5 +91,5 @@ Material:
     - _DitherAround: {r: 0, g: 100000, b: 0, a: 0}
     - _DropDir: {r: 0, g: 10, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
+    - _RimColor: {r: 0.0009765625, g: 0.0009765625, b: 0.0009765625, a: 1}
+    - _SpecularColor: {r: 0.0009765625, g: 0.0009765625, b: 0.0009765625, a: 1}
