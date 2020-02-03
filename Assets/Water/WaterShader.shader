@@ -156,6 +156,7 @@ Shader "Custom/Water"
 		float wrappedTime = abs((_Time[1] * 0.5));
 		float noise = tex2D(_NoiseTex, (i.uv - flow * _Time)*_NoiseTiling).r;
 		float3 ripple = filterNormalLod(float4(ComputeScreenPos(pos).xy,0,0), 1.0/512.0) * _RippleStr;
+		ripple.y = 0;
 		float3 addNorm = lerp(tex2D(_NormTex, (i.uv - flow * _Time)*_NormTiling), tex2D(_NormTex, (i.uv  - flow * _Time)*_NormTiling + 0.5), wrappedTime) * _NormalStrength;
 		float3 foam = 1-tex2D(_FoamTex, (i.uv - flow * _Time * 0.5)*_FoamTiling)*_FoamNoiseStrength;
 		addNorm.xy -= fixed2(1, 1)*_NormalStrength ;

@@ -254,7 +254,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -301,7 +301,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -387,6 +387,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2009158711}
     m_Modifications:
+    - target: {fileID: 1520848053671781723, guid: e94bda306226d4c6aa43e1d0ee4aa4e8,
+        type: 3}
+      propertyPath: timeToPlay
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5792077660304363079, guid: e94bda306226d4c6aa43e1d0ee4aa4e8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -603,7 +608,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -825,7 +830,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -914,12 +919,22 @@ PrefabInstance:
     - target: {fileID: 6470462190419194911, guid: 081318b3667ab5f409d3dfb4e1d1b0c2,
         type: 3}
       propertyPath: delay
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6470462190419194911, guid: 081318b3667ab5f409d3dfb4e1d1b0c2,
         type: 3}
       propertyPath: from
       value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6470462190419194911, guid: 081318b3667ab5f409d3dfb4e1d1b0c2,
+        type: 3}
+      propertyPath: to
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6470462190419194911, guid: 081318b3667ab5f409d3dfb4e1d1b0c2,
+        type: 3}
+      propertyPath: timeToPlay
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 081318b3667ab5f409d3dfb4e1d1b0c2, type: 3}
@@ -974,6 +989,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2009158711}
     m_Modifications:
+    - target: {fileID: 4659445889100740847, guid: 97f60c0b27ae44856aeae47bbd0b8620,
+        type: 3}
+      propertyPath: timeToPlay
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4911547950755909615, guid: 97f60c0b27ae44856aeae47bbd0b8620,
         type: 3}
       propertyPath: m_Name
@@ -1185,7 +1205,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -1401,7 +1421,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -1517,7 +1537,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -1927,7 +1947,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -2164,7 +2184,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -2301,7 +2321,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -3005,7 +3025,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -3252,7 +3272,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -3408,7 +3428,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -3545,7 +3565,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -3682,7 +3702,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -3789,6 +3809,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2009158711}
     m_Modifications:
+    - target: {fileID: 4659445889100740847, guid: 97f60c0b27ae44856aeae47bbd0b8620,
+        type: 3}
+      propertyPath: timeToPlay
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4911547950755909615, guid: 97f60c0b27ae44856aeae47bbd0b8620,
         type: 3}
       propertyPath: m_Name
@@ -3998,6 +4023,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2009158711}
     m_Modifications:
+    - target: {fileID: 4659445889100740847, guid: 97f60c0b27ae44856aeae47bbd0b8620,
+        type: 3}
+      propertyPath: timeToPlay
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4911547950755909615, guid: 97f60c0b27ae44856aeae47bbd0b8620,
         type: 3}
       propertyPath: m_Name
@@ -4244,7 +4274,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 1
+  timeToPlay: 2
   from: 3
   to: 0
   delay: 0
@@ -4653,7 +4683,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -4998,7 +5028,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -5135,7 +5165,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -5257,7 +5287,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -5785,6 +5815,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2009158711}
     m_Modifications:
+    - target: {fileID: 4659445889100740847, guid: 97f60c0b27ae44856aeae47bbd0b8620,
+        type: 3}
+      propertyPath: timeToPlay
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4911547950755909615, guid: 97f60c0b27ae44856aeae47bbd0b8620,
         type: 3}
       propertyPath: m_Name
@@ -5948,12 +5983,22 @@ PrefabInstance:
     - target: {fileID: 6470462190419194911, guid: 081318b3667ab5f409d3dfb4e1d1b0c2,
         type: 3}
       propertyPath: delay
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6470462190419194911, guid: 081318b3667ab5f409d3dfb4e1d1b0c2,
         type: 3}
       propertyPath: from
       value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6470462190419194911, guid: 081318b3667ab5f409d3dfb4e1d1b0c2,
+        type: 3}
+      propertyPath: timeToPlay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6470462190419194911, guid: 081318b3667ab5f409d3dfb4e1d1b0c2,
+        type: 3}
+      propertyPath: to
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 081318b3667ab5f409d3dfb4e1d1b0c2, type: 3}
@@ -6053,6 +6098,11 @@ PrefabInstance:
         type: 3}
       propertyPath: from
       value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8566390142488691408, guid: b32af0ec65c55384aa129f1c4ce5ca7f,
+        type: 3}
+      propertyPath: timeToPlay
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b32af0ec65c55384aa129f1c4ce5ca7f, type: 3}
@@ -6174,7 +6224,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -6323,7 +6373,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -6460,7 +6510,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 1
+  timeToPlay: 2
   from: 3
   to: 0
   delay: 0
@@ -6749,7 +6799,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -6760,6 +6810,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2009158711}
     m_Modifications:
+    - target: {fileID: 4659445889100740847, guid: 97f60c0b27ae44856aeae47bbd0b8620,
+        type: 3}
+      propertyPath: timeToPlay
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4911547950755909615, guid: 97f60c0b27ae44856aeae47bbd0b8620,
         type: 3}
       propertyPath: m_Name
@@ -7336,7 +7391,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -7476,7 +7531,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -7520,6 +7575,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2009158711}
     m_Modifications:
+    - target: {fileID: 4659445889100740847, guid: 97f60c0b27ae44856aeae47bbd0b8620,
+        type: 3}
+      propertyPath: timeToPlay
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4911547950755909615, guid: 97f60c0b27ae44856aeae47bbd0b8620,
         type: 3}
       propertyPath: m_Name
@@ -7908,7 +7968,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -8045,7 +8105,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 1
+  timeToPlay: 2
   from: 3
   to: 0
   delay: 0
@@ -8130,6 +8190,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8134976609052068885, guid: 6769a1ae6aa67fa4d8d839a78adca2bb,
+        type: 3}
+      propertyPath: timeToPlay
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6769a1ae6aa67fa4d8d839a78adca2bb, type: 3}
@@ -8365,7 +8430,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -8502,7 +8567,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -9015,7 +9080,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -9222,7 +9287,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -9359,7 +9424,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -9481,7 +9546,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -9603,7 +9668,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -9896,7 +9961,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -10137,6 +10202,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2009158711}
     m_Modifications:
+    - target: {fileID: 4659445889100740847, guid: 97f60c0b27ae44856aeae47bbd0b8620,
+        type: 3}
+      propertyPath: timeToPlay
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4911547950755909615, guid: 97f60c0b27ae44856aeae47bbd0b8620,
         type: 3}
       propertyPath: m_Name
@@ -10297,6 +10367,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7673354890947726783, guid: 70f18704b4ebe6e45a2507e2b97a6fc3,
+        type: 3}
+      propertyPath: timeToPlay
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70f18704b4ebe6e45a2507e2b97a6fc3, type: 3}
 --- !u!1001 &1830842438
@@ -10417,7 +10492,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -10623,7 +10698,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -10795,7 +10870,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 1
+  timeToPlay: 2
   from: 3
   to: 0
   delay: 0
@@ -11326,7 +11401,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -11524,10 +11599,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
-  delay: 2
+  delay: 3
 --- !u!1001 &2062844335
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11915,7 +11990,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeToPlay: 0.4
+  timeToPlay: 1
   from: -1
   to: 2
   delay: 0
@@ -11966,6 +12041,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2009158711}
     m_Modifications:
+    - target: {fileID: 1520848053671781723, guid: e94bda306226d4c6aa43e1d0ee4aa4e8,
+        type: 3}
+      propertyPath: timeToPlay
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5792077660304363079, guid: e94bda306226d4c6aa43e1d0ee4aa4e8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12054,7 +12134,7 @@ PrefabInstance:
     - target: {fileID: 8224651863689678611, guid: cdadeb722bc3d45dd90c1f4b4bf615ef,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.7
+      value: -1.17
       objectReference: {fileID: 0}
     - target: {fileID: 8224651863689678611, guid: cdadeb722bc3d45dd90c1f4b4bf615ef,
         type: 3}
@@ -12130,6 +12210,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2009158711}
     m_Modifications:
+    - target: {fileID: 4659445889100740847, guid: 97f60c0b27ae44856aeae47bbd0b8620,
+        type: 3}
+      propertyPath: timeToPlay
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4911547950755909615, guid: 97f60c0b27ae44856aeae47bbd0b8620,
         type: 3}
       propertyPath: m_Name
