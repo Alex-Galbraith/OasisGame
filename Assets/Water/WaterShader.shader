@@ -168,7 +168,7 @@ Shader "Custom/Water"
 		float4 c = 0;
 		c.a = 1;
 
-		float rim = 1 - (dot(worldNormal, worldViewDir)) * _RimPower;
+		float rim = 1 - (dot(i.worldNormal, worldViewDir)) * _RimPower;
 		rim = clamp(rim, 0, 1) * _Reflect * skyColor.a;
 		c.rgb = rim * skyColor + (_FoamColor * intersect * _FoamColor.a * (shadow+_Ambient)) ;
 		//c.rgb = c.rgb * c.a;

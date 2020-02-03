@@ -154,8 +154,9 @@ Shader "Custom/Dissolve Toon"
 				SHADOW_COORDS(2)
 			};
 
-			sampler2D _MainTex;
-			float4 _MainTex_ST, _DitherAround;
+			#include "ToonCommon.cginc"
+
+			float4 _DitherAround;
 			float _DropIn;
 			
 			v2f vert (appdata v)
@@ -172,16 +173,7 @@ Shader "Custom/Dissolve Toon"
 				return o;
 			}
 			
-			float4 _Color;
-
-			float4 _AmbientColor;
-
-			float4 _SpecularColor;
-			float _Glossiness;		
-
-			float4 _RimColor;
-			float _RimAmount;
-			float _RimThreshold, _DitherRadius;	
+			float _DitherRadius;	
 
 
 			float4 frag (v2f i) : SV_Target
@@ -196,48 +188,7 @@ Shader "Custom/Dissolve Toon"
 				fixed thing = (dot(viewDir.xyz, dirToPlayer) - dot(viewDir.xyz, dirToFrag.xyz)) ;
 				//clip(thing * doClip);
 
-				// Lighting below is calculated using Blinn-Phong,
-				// with values thresholded to creat the "toon" look.
-				// https://en.wikipedia.org/wiki/Blinn-Phong_shading_model
-
-				// Calculate illumination from directional light.
-				// _WorldSpaceLightPos0 is a vector pointing the OPPOSITE
-				// direction of the main directional light.
-				float NdotL = dot(_WorldSpaceLightPos0, normal);
-				float NdotV = dot(viewDir, normal);
-
-				// Samples the shadow map, returning a value in the 0...1 range,
-				// where 0 is in the shadow, and 1 is not.
-				float shadow = SHADOW_ATTENUATION(i);
-				// Partition the intensity into light and dark, smoothly interpolated
-				// between the two to avoid a jagged break.
-				float LowIntensity = smoothstep(0, 0.001, NdotL * shadow);	
-				float MedIntensity = smoothstep(0.5, 0.501, NdotL * shadow);	
-                float lightIntensity = (LowIntensity + MedIntensity) * 0.5;
-                
-				// Multiply by the main directional light's intensity and color.
-				float4 light = lightIntensity * _LightColor0;
-
-				// Calculate specular reflection.
-				float3 halfVector = normalize(_WorldSpaceLightPos0 + viewDir);
-				float NdotH = dot(normal, halfVector);
-				// Multiply _Glossiness by itself to allow artist to use smaller
-				// glossiness values in the inspector.
-				float specularIntensity = pow(NdotH * lightIntensity, _Glossiness * _Glossiness);
-				float specularIntensitySmooth = smoothstep(0.005, 0.006, specularIntensity);
-				float4 specular = specularIntensitySmooth * _SpecularColor;				
-
-				// Calculate rim lighting.
-				float rimDot = 1 - dot(viewDir, normal);
-				// We only want rim to appear on the lit side of the surface,
-				// so multiply it by NdotL, raised to a power to smoothly blend it.
-				float rimIntensity = rimDot * pow((NdotL), _RimThreshold);
-				rimIntensity = smoothstep(_RimAmount - 0.01, _RimAmount + 0.01, rimIntensity);
-				float4 rim = rimIntensity * _RimColor;
-
-				float4 sample = tex2D(_MainTex, i.uv);
-                float4 col = lerp(_Color, _AmbientColor, saturate(_AmbientColor.a * (1-lightIntensity)));
-				col = (saturate(light + _AmbientColor) ) * col * sample + saturate(specular + rim);
+				float4 col = ToonShade(i);
 				col = Dissolve(i.uv, col);
 				return col;
 			}
