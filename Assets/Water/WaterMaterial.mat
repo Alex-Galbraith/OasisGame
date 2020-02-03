@@ -93,7 +93,7 @@ Material:
     - _MaxDepth: 9.8
     - _Metallic: 0
     - _Mode: 0
-    - _NormalStrength: 0.01
+    - _NormalStrength: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _Reflect: 1
@@ -101,6 +101,7 @@ Material:
     - _RimPower: 0.8
     - _RippleHeight: 4
     - _RippleStr: 1
+    - _Shean: 0.2
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -117,3 +118,4 @@ Material:
     - _MainColor: {r: 1, g: 1, b: 1, a: 1}
     - _NoiseTiling: {r: 0.1, g: 0.1, b: 0, a: 0}
     - _NormTiling: {r: 50, g: 50, b: 50, a: 0}
+    - _Shean: {r: 0.122641504, g: 0.122641504, b: 0.122641504, a: 1}

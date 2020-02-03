@@ -20,6 +20,7 @@ public class MainCanvas : MonoBehaviour
     {
         cg = GetComponent<CanvasGroup>();
         StartCoroutine(FadeIn());
+        BackingCanvas.gameObject.SetActive(true);
 
         if(skipIntro)
         {
@@ -33,7 +34,7 @@ public class MainCanvas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKey && !doneIntro && canFadeOut)
+        if ((Input.anyKey && !doneIntro && canFadeOut) || Input.GetKey(KeyCode.P))
         {
             StopAllCoroutines();
             doneIntro = true;

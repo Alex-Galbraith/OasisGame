@@ -14,6 +14,6 @@ public class RippleCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Shader.SetGlobalMatrix("_RippleWorldToClip", camera.projectionMatrix * camera.worldToCameraMatrix );
+        Shader.SetGlobalMatrix("_RippleWorldToClip",  camera.projectionMatrix * camera.worldToCameraMatrix );
     }
 }

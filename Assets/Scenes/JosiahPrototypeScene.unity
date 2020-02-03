@@ -5358,7 +5358,7 @@ Camera:
   near clip plane: 100
   far clip plane: 1000
   field of view: 10
-  orthographic: 1
+  orthographic: 0
   orthographic size: 100
   m_Depth: 0
   m_CullingMask:
@@ -10063,7 +10063,7 @@ MonoBehaviour:
   ignoreJitter: 1
   m_ReflectLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1
 --- !u!1 &1791192634
 GameObject:
   m_ObjectHideFlags: 0
@@ -12134,12 +12134,12 @@ PrefabInstance:
     - target: {fileID: 8224651863689678611, guid: cdadeb722bc3d45dd90c1f4b4bf615ef,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.17
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8224651863689678611, guid: cdadeb722bc3d45dd90c1f4b4bf615ef,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8224651863689678611, guid: cdadeb722bc3d45dd90c1f4b4bf615ef,
         type: 3}

@@ -10,6 +10,7 @@ Shader "Custom/Water"
 		_DepthColor("Depth Color", Color) = (0,0,0,1)
 		_RimPower("Rim Power", Range(0, 10)) = 1
 		_Ambient("Ambient", Color) = (1,1,1,1)
+		_Shean("Shean", Float) = 0.1
 		[MaterialToggle] _Reflect("Do reflections", Float) = 1
 		_IntersectionPower("Intersect Power", Range(0, 1)) = 0
 
@@ -110,6 +111,7 @@ Shader "Custom/Water"
 	fixed _IntersectionPower, _IntersectionBias;
 	fixed  _MaxDepth, _Refraction, _NormalStrength, _FoamNoiseStrength, _Reflect, _RippleHeight, _RippleStr;
 	fixed2 _NoiseTiling, _NormTiling, _FoamTiling;
+	float _Shean;
 
 
 	
@@ -150,12 +152,13 @@ Shader "Custom/Water"
 	{
 		float shadow = SHADOW_ATTENUATION(i);
 		float4 pos = mul(_RippleWorldToClip, i.worldPos);
-
+		float2 rippleUV = ComputeScreenPos(pos).xy / pos.w;
+		rippleUV. y = 1 - rippleUV.y;
 
 		float2 flow = float2(-.1,0.01) * 0.1;
 		float wrappedTime = abs((_Time[1] * 0.5));
 		float noise = tex2D(_NoiseTex, (i.uv - flow * _Time)*_NoiseTiling).r;
-		float3 ripple = filterNormalLod(float4(ComputeScreenPos(pos).xy,0,0), 1.0/512.0) * _RippleStr;
+		float3 ripple = filterNormalLod(float4(rippleUV,0,0), 1.0/512.0) * _RippleStr;
 		ripple.y = 0;
 		float3 addNorm = lerp(tex2D(_NormTex, (i.uv - flow * _Time)*_NormTiling), tex2D(_NormTex, (i.uv  - flow * _Time)*_NormTiling + 0.5), wrappedTime) * _NormalStrength;
 		float3 foam = 1-tex2D(_FoamTex, (i.uv - flow * _Time * 0.5)*_FoamTiling)*_FoamNoiseStrength;
@@ -182,8 +185,8 @@ Shader "Custom/Water"
 		float4 c = 0;
 		c.a = 1;
 
-		float rim = 1 - (dot(worldNormal, worldViewDir)) * _RimPower;
-		rim = clamp(rim, 0, 1) * _Reflect * skyColor.a;
+		float rimVal = 1 - (dot(worldNormal, worldViewDir)) * _RimPower;
+		float rim = clamp(rimVal, 0, 1) * _Reflect * skyColor.a;
 		c.rgb = rim * skyColor + (_FoamColor * intersect * _FoamColor.a * (shadow+_Ambient)) ;
 		//c.rgb = c.rgb * c.a;
 
@@ -202,7 +205,9 @@ Shader "Custom/Water"
 		//screenZ2 = screenZ;
 
 		//c.rgb += b.rgb;
-		c.rgb += lerp(b.rgb , _DepthColor.rgb, clamp((screenZ2 - i.eyeZ) / _MaxDepth, 0, 1)) *(1 - rim) * (1 - intersect * _FoamColor.a );
+		c.rgb += lerp(b.rgb , _DepthColor.rgb, clamp((screenZ2 - i.eyeZ) / _MaxDepth, 0, 1)) *(1 - rim) * (1 - intersect * _FoamColor.a ) + _Ambient * _Shean * (1-rimVal);
+		
+		//c = tex2D(_RippleTex,rippleUV);
 		return c;
 	}
 	
