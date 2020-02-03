@@ -26,6 +26,9 @@ Shader "Custom/Water"
 		_NoiseTiling("Noise Tiling", Vector) = (1,1,0,0)
 		_NormTex("Norm", 2D) = "bump"
 		_NormTiling("Norm Tiling", Vector) = (1,1,0,0)
+		_RippleTex("Ripple Texture", 2D) = "black"
+		_RippleHeight("Ripple height", Float) = 1
+		_RippleStr("Ripple str", Float) = 1
 		[HideInInspector] _ReflectionTex("", 2D) = "white"
 	}
 
@@ -98,18 +101,31 @@ Shader "Custom/Water"
 		};
 	
 
-	sampler2D _CameraDepthTexture, _ReflectionTex;
+	sampler2D _CameraDepthTexture, _ReflectionTex, _RippleTex;
 	sampler2D _NoiseTex, _NormTex, _BackgroundTexture, _FoamTex;
 	float4x4 unity_WorldToLight, _ShadowDepthMatrix;
+	float4x4 _RippleWorldToClip;
 	fixed4 _FoamColor, _DepthColor, _Ambient;
 	fixed _RimPower;
 	fixed _IntersectionPower, _IntersectionBias;
-	fixed  _MaxDepth, _Refraction, _NormalStrength, _FoamNoiseStrength, _Reflect;
+	fixed  _MaxDepth, _Refraction, _NormalStrength, _FoamNoiseStrength, _Reflect, _RippleHeight, _RippleStr;
 	fixed2 _NoiseTiling, _NormTiling, _FoamTiling;
 
 
 	
-
+	float3 filterNormalLod(float4 uv, float texelSize)
+	{
+		float4 h;
+		h[0] = tex2Dlod(_RippleTex, uv + float4(texelSize * float2( 0,-1),0,0)).r * _RippleHeight;
+		h[1] = tex2Dlod(_RippleTex, uv + float4(texelSize * float2(-1, 0),0,0)).r * _RippleHeight;
+		h[2] = tex2Dlod(_RippleTex, uv + float4(texelSize * float2( 1, 0),0,0)).r * _RippleHeight;
+		h[3] = tex2Dlod(_RippleTex, uv + float4(texelSize * float2( 0, 1),0,0)).r * _RippleHeight;
+		float3 n;
+		n.z = h[0] - h[3];
+		n.x = h[1] - h[2];
+		n.y = 1;
+		return normalize(n);
+	}
 
 	v2f vert(appdata v)
 	{
@@ -129,24 +145,21 @@ Shader "Custom/Water"
 		return o;
 	}
 
-	float3 BoxProjection(
-		float3 direction, float3 position,
-		float3 cubemapPosition, float3 boxMin, float3 boxMax) {
-		float3 factors = ((direction > 0 ? boxMax : boxMin) - position) / direction;
-		float scalar = min(min(factors.x, factors.y), factors.z);
-		return direction * scalar + (position - cubemapPosition);
-	}
 
 	fixed4 frag(v2f i) : SV_Target
 	{
 		float shadow = SHADOW_ATTENUATION(i);
+		float4 pos = mul(_RippleWorldToClip, i.worldPos);
+
 
 		float2 flow = float2(-.1,0.01) * 0.1;
 		float wrappedTime = abs((_Time[1] * 0.5));
 		float noise = tex2D(_NoiseTex, (i.uv - flow * _Time)*_NoiseTiling).r;
+		float3 ripple = filterNormalLod(float4(ComputeScreenPos(pos).xy,0,0), 1.0/512.0) * _RippleStr;
 		float3 addNorm = lerp(tex2D(_NormTex, (i.uv - flow * _Time)*_NormTiling), tex2D(_NormTex, (i.uv  - flow * _Time)*_NormTiling + 0.5), wrappedTime) * _NormalStrength;
 		float3 foam = 1-tex2D(_FoamTex, (i.uv - flow * _Time * 0.5)*_FoamTiling)*_FoamNoiseStrength;
-		addNorm.xy -= fixed2(1, 1)*_NormalStrength;
+		addNorm.xy -= fixed2(1, 1)*_NormalStrength ;
+		addNorm += ripple;
 		float3 worldNormal = normalize(i.worldNormal + (addNorm*noise));
 		float3 worldViewDir = normalize(i.worldViewDir);
 
@@ -168,7 +181,7 @@ Shader "Custom/Water"
 		float4 c = 0;
 		c.a = 1;
 
-		float rim = 1 - (dot(i.worldNormal, worldViewDir)) * _RimPower;
+		float rim = 1 - (dot(worldNormal, worldViewDir)) * _RimPower;
 		rim = clamp(rim, 0, 1) * _Reflect * skyColor.a;
 		c.rgb = rim * skyColor + (_FoamColor * intersect * _FoamColor.a * (shadow+_Ambient)) ;
 		//c.rgb = c.rgb * c.a;
@@ -189,9 +202,6 @@ Shader "Custom/Water"
 
 		//c.rgb += b.rgb;
 		c.rgb += lerp(b.rgb , _DepthColor.rgb, clamp((screenZ2 - i.eyeZ) / _MaxDepth, 0, 1)) *(1 - rim) * (1 - intersect * _FoamColor.a );
-		//c.rgb = b;
-		//c = clamp(c, 0, 1);
-		//c = c / c.a;
 		return c;
 	}
 	

@@ -44,7 +44,7 @@
             fixed4 frag (v2f i) : SV_Target
             {
                 // sample the texture
-                fixed4 col = _AmbientColor * 0;
+                fixed4 col = float4(_AmbientColor.rgb, 0);
                 // apply fog
                 return col;
             }
