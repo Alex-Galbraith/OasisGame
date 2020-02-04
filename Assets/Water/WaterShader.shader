@@ -151,9 +151,11 @@ Shader "Custom/Water"
 	fixed4 frag(v2f i) : SV_Target
 	{
 		float shadow = SHADOW_ATTENUATION(i);
-		float4 pos = mul(_RippleWorldToClip, i.worldPos);
-		float2 rippleUV = ComputeScreenPos(pos).xy / pos.w;
+		float4 ripplePos = mul(_RippleWorldToClip, i.worldPos);
+		float2 rippleUV = ComputeScreenPos(ripplePos).xy / ripplePos.w;
+		#if UNITY_UV_STARTS_AT_TOP
 		rippleUV. y = 1 - rippleUV.y;
+		#endif
 
 		float2 flow = float2(-.1,0.01) * 0.1;
 		float wrappedTime = abs((_Time[1] * 0.5));
@@ -205,7 +207,7 @@ Shader "Custom/Water"
 		//screenZ2 = screenZ;
 
 		//c.rgb += b.rgb;
-		c.rgb += lerp(b.rgb , _DepthColor.rgb, clamp((screenZ2 - i.eyeZ) / _MaxDepth, 0, 1)) *(1 - rim) * (1 - intersect * _FoamColor.a ) + _Ambient * _Shean * (1-rimVal);
+		c.rgb += lerp(b.rgb , _DepthColor.rgb, clamp((screenZ2 - i.eyeZ) / _MaxDepth, 0, 1)) *(1 - rim) * (1 - intersect * _FoamColor.a ) + _Ambient * _Shean * (rimVal);
 		
 		//c = tex2D(_RippleTex,rippleUV);
 		return c;
